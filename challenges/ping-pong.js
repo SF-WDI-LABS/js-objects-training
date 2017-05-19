@@ -40,25 +40,33 @@
 // YOUR CODE HERE
 
 
-
+//first helper function - will return the index of the steps object within the given array:
 function indexOfNotNull(arr) {
-  let targetIdx = arr.findIndex(function(el, idx) {
+  let Idx = arr.findIndex(function(el, idx) {
     return (el !== null);
   });
-  return targetIdx;
+  return Idx;
 }
-//console.log(indexOfNotNull(table));
+
+//second helper function - will grab the current step count as per the object with "steps" key:
+function currStepCount(arr) {
+  let targetIdx = indexOfNotNull(arr);
+  let stepCount = arr[targetIdx].steps;
+  return stepCount;
+}
 
 
-
+/*
 function pingPong(arr) {
 
+  let targetIdx = indexOfNotNull(arr);
 
 
 
-
-  //return arr;
+  return arr;
 }
-var table = [{steps: 0}, null, null, null];
-console.log(pingPong(table));
 */
+var table = [null, null, null, {steps: 9}, null, null, null];
+//console.log(pingPong(table));
+
+console.log(currStepCount(table));
