@@ -32,11 +32,11 @@
 
 // YOUR CODE HERE
 function letterCount(str) {
+  var strLow = str.toLowerCase();
   var count = {};
-
-  for (var i = 0; i < str.length; i++) {
-    count[str[i]] === undefined ? count[str[i]] = 1 : count[str[i]] += 1;
+  for (var i = 0; i < strLow.length; i++) {
+    count[strLow[i]] === undefined ? count[strLow[i]] = 1 : count[strLow[i]] += 1;
   }
   return count;
 }
-console.log(letterCount("apple"));
+console.log(letterCount("CaliforniaRaisins"));
