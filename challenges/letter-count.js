@@ -34,7 +34,7 @@
 function letterCount(str) {
   var strLow = str.toLowerCase();
   var count = {};
-  for (var i = 0; i < strLow.length; i++) {
+  for (var i in strLow) {
     count[strLow[i]] === undefined ? count[strLow[i]] = 1 : count[strLow[i]] += 1;
   }
   return count;
