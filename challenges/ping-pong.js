@@ -55,17 +55,29 @@ function currStepCount(arr) {
   return stepCount;
 }
 
+//third helper function - will return a boolean, true will make pingPong go right in function below,
+// false will make pingPong go left in function below:
+function rightOrLeft(arr) {
 
-/*
+}
+
+
+
 function pingPong(arr) {
 
-  let targetIdx = indexOfNotNull(arr);
+  let currIdx = indexOfNotNull(arr);
+  let stepNum = currStepCount(arr);
 
+  if (rightOrLeft()) {
+    /*  move steps object 1 index to the right & arr[newIdx].steps +=1  */
+  } else {
+    /*  move steps object 1 index to the left & arr[newIdx].steps +=1  */
+  }
 
 
   return arr;
 }
-*/
+
 var table = [null, null, null, {steps: 9}, null, null, null];
 //console.log(pingPong(table));
 
