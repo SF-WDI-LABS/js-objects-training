@@ -31,3 +31,14 @@
 */
 
 // YOUR CODE HERE
+var str = "A rocket screams across the sky";
+var arr = str.split('');
+var occ = {};
+for(var i=0,c=arr.length;i<c;i++){
+    if(occ[arr[i]]) occ[arr[i]]++;
+    else occ[arr[i]] = 1;
+}
+for(var i in occ){
+    console.log('count of '+i+' -> '+occ[i]); 
+}
+
