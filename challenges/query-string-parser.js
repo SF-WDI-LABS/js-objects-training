@@ -45,3 +45,20 @@
 */
 
 // YOUR CODE HERE
+
+function parseQString(str) {
+  let resultObj = {};
+
+  if (str.indexOf("&") === - 1) {
+    let strSplit = str.split("=");
+      resultObj[strSplit[0]] = strSplit[1];
+  } else {
+    keyValPairs = str.split("&");
+    for (let i =0; i < keyValPairs.length; i++) {
+      let keyVal = keyValPairs[i].split("=");
+      resultObj[keyVal[0]] = keyVal[1];
+    };
+  }
+  return resultObj;
+}
+console.log(parseQString("first=alpha&last=omega"));

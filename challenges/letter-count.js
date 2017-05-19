@@ -31,3 +31,12 @@
 */
 
 // YOUR CODE HERE
+function letterCount(str) {
+  var count = {};
+
+  for (var i = 0; i < str.length; i++) {
+    count[str[i]] === undefined ? count[str[i]] = 1 : count[str[i]] += 1;
+  }
+  return count;
+}
+console.log(letterCount("apple"));

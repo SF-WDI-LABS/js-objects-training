@@ -38,3 +38,27 @@
 */
 
 // YOUR CODE HERE
+
+
+
+function indexOfNotNull(arr) {
+  let targetIdx = arr.findIndex(function(el, idx) {
+    return (el !== null);
+  });
+  return targetIdx;
+}
+//console.log(indexOfNotNull(table));
+
+
+
+function pingPong(arr) {
+
+
+
+
+
+  //return arr;
+}
+var table = [{steps: 0}, null, null, null];
+console.log(pingPong(table));
+*/
