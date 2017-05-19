@@ -31,3 +31,24 @@
 */
 
 // YOUR CODE HERE
+function letterCount(phrase) {
+  //first eliminate all spaces and symbols.
+  // convert string into an array
+  // then, find value of array[0], see how many times that occurs;
+  // repeat
+
+  var stripSymbols = phrase.replace(/[^\w\s]|_/g, "");
+  var noDoubleSpaces = stripSymbols.replace(/\s+/g, "");
+  var makeArray = noDoubleSpaces.split("");
+  //var arrayWithLengthCount = [];
+  for(var i = 0; i < makeArray.length; i++) {
+    noDoubleSpaces.split(makeArray[i]).length-1;
+  }
+
+
+
+}
+
+
+
+letterCount("apple %@#)($#)$");

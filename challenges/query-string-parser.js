@@ -45,3 +45,21 @@
 */
 
 // YOUR CODE HERE
+
+// parseQueryString("a=apple&b=beet&b=blueberry&c=&d=10");
+//=> {
+//    "a": "1",
+//   }
+
+function parseQueryString(unformatedStr) {
+  if (unformatedStr === "") {
+    return [];
+  } else {
+    var firstReplace = unformatedStr.replace(/=/g, "\":\"");
+    var secondReplace = firstReplace.replace(/&/g, "\",\"");
+    var makeJson = "{\"" + secondReplace + "\"}";
+    var jsonToObj = JSON.parse(makeJson);
+    return jsonToObj;
+  }
+}
+parseQueryString("a=apple&b=beet&b=blueberry&c=&d=10");

@@ -4,6 +4,9 @@
   returns the number of days (integer) between today and that date. Please use the built in
   Javascript `Date` type in your solution.
 
+
+
+
   See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
 
   Next, create a function `birthdayReminder` that accepts an array of objects, containing a person's
@@ -34,3 +37,19 @@
 */
 
 // YOUR CODE HERE
+/*
+Create a function `daysUntilDate` that accepts a string (with the format `"mm/dd/yyyy"`) and
+returns the number of days (integer) between today and that date. Please use the built in
+Javascript `Date` type in your solution.
+*/
+
+function daysUntilDate(futureDate) {
+  //convert string to date
+  var stringToDate = new Date(futureDate);
+  var todaysDate = new Date();
+  var daysDifference = todaysDate - stringToDate;
+  return daysDifference;
+
+}
+
+daysUntilDate("08/01/2017");
