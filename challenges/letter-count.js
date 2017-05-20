@@ -31,3 +31,29 @@
 */
 
 // YOUR CODE HERE
+
+function letterCount(str) {
+    // create object for letters and their count
+    var output = {};
+    // split string into an array and lowercase all letters to remove confusion between uppercase and lowercase counting of letters
+    var strToArray = str.toLowerCase().split("");
+    // create conditions to add an additional one if output object already has a letter
+    strToArray.forEach(function(el) {
+        if (output[el]) {
+            output[el] += 1;
+        // if not, add new letter to object with one
+        } else {
+            output[el] = 1;
+        }
+    });
+    // returns object after it has been turned into an array
+    return frequencyStat(output, str.length);
+}
+    // BONUS - return frequency
+    function frequencyStat(object, length) {
+        var letterArr = Object.keys(object);
+        letterArr.forEach(function(letter) {
+            object[letter] = (object[letter] / length);
+        });
+        return object;
+    }

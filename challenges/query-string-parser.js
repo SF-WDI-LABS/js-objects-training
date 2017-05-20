@@ -45,3 +45,15 @@
 */
 
 // YOUR CODE HERE
+
+function parseQueryString(string) {
+        // split string
+        var pairs = string.split("&");
+        var output = {};
+        // split key and value
+        pairs.forEach(function(keyValue) {
+            var str = keyValue.split("=");
+            output[str[0]] = str[1];
+        });
+        return output;
+}
