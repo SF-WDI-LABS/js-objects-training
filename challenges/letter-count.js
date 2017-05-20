@@ -31,3 +31,12 @@
 */
 
 // YOUR CODE HERE
+function phrase(str) {
+var arr = str.split('');
+var occ = {};
+for(var i=0,c=arr.length;i<c;i++){
+    if(occ[arr[i]]) occ[arr[i]]++;
+    else occ[arr[i]] = 1;
+}
+  return occ;
+}}
