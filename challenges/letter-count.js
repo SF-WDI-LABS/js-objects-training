@@ -34,9 +34,11 @@
 function letterCount(str) {
   var strLow = str.toLowerCase();
   var count = {};
+  var specialChars = " .-/!@#$%^&*(),;''[]{}";
   for (var i in strLow) {
-    count[strLow[i]] === undefined ? count[strLow[i]] = 1 : count[strLow[i]] += 1;
+    if (specialChars.indexOf(strLow[i]) === -1) {
+      count[strLow[i]] === undefined ? count[strLow[i]] = 1 : count[strLow[i]] += 1;
+    }
   }
-  return count;
 }
-console.log(letterCount("CaliforniaRaisins"));
+console.log(letterCount("California Raisins"));

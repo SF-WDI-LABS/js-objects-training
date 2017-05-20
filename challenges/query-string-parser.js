@@ -61,4 +61,21 @@ function parseQString(str) {
   }
   return resultObj;
 }
-console.log(parseQString("first=alpha&last=omega"));
+//console.log(parseQString("a=apple&b=beet&b=blueberry&c=&d=10"));
+
+//Mega Bonus:
+function reverseParseQString(obj) {
+  var keys = Object.keys(obj);
+  var valueArray = [];
+
+  for (var i in obj) {
+    valueArray.push(obj[i]);
+  }
+  var resultArr = keys.map(function(el, idx) {
+    return el + "=" + valueArray[idx];
+  });
+  return "'" + resultArr.join("&") + "'";
+}
+
+var o = {first: "alpha", last: "omega"}
+console.log(reverseParseQString(o));
