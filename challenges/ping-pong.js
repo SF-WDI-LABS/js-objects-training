@@ -38,3 +38,47 @@
 */
 
 // YOUR CODE HERE
+
+
+//first helper function - will return the index of the steps object within the given array:
+function indexOfNotNull(arr) {
+  let Idx = arr.findIndex(function(el, idx) {
+    return (el !== null);
+  });
+  return Idx;
+}
+
+//second helper function - will grab the current step count as per the object with "steps" key:
+function currStepCount(arr) {
+  let targetIdx = indexOfNotNull(arr);
+  let stepCount = arr[targetIdx].steps;
+  return stepCount;
+}
+
+//third helper function - will return a boolean, true will make pingPong go right in function below,
+// false will make pingPong go left in function below:
+function rightOrLeft(arr) {
+
+}
+
+
+
+function pingPong(arr) {
+
+  let currIdx = indexOfNotNull(arr);
+  let stepNum = currStepCount(arr);
+
+  if (rightOrLeft()) {
+    /*  move steps object 1 index to the right & arr[newIdx].steps +=1  */
+  } else {
+    /*  move steps object 1 index to the left & arr[newIdx].steps +=1  */
+  }
+
+
+  return arr;
+}
+
+var table = [null, null, null, {steps: 9}, null, null, null];
+//console.log(pingPong(table));
+
+console.log(currStepCount(table));

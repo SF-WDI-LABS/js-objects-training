@@ -45,3 +45,37 @@
 */
 
 // YOUR CODE HERE
+
+function parseQString(str) {
+  let resultObj = {};
+
+  if (str.indexOf("&") === - 1) {
+    let strSplit = str.split("=");
+      resultObj[strSplit[0]] = strSplit[1];
+  } else {
+    keyValPairs = str.split("&");
+    for (let i =0; i < keyValPairs.length; i++) {
+      let keyVal = keyValPairs[i].split("=");
+      resultObj[keyVal[0]] = keyVal[1];
+    };
+  }
+  return resultObj;
+}
+//console.log(parseQString("a=apple&b=beet&b=blueberry&c=&d=10"));
+
+//Mega Bonus:
+function reverseParseQString(obj) {
+  var keys = Object.keys(obj);
+  var valueArray = [];
+
+  for (var i in obj) {
+    valueArray.push(obj[i]);
+  }
+  var resultArr = keys.map(function(el, idx) {
+    return el + "=" + valueArray[idx];
+  });
+  return "'" + resultArr.join("&") + "'";
+}
+
+var o = {first: "alpha", last: "omega"}
+console.log(reverseParseQString(o));

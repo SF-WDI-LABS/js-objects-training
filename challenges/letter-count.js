@@ -31,3 +31,14 @@
 */
 
 // YOUR CODE HERE
+function letterCount(str) {
+  var strLow = str.toLowerCase();
+  var count = {};
+  var specialChars = " .-/!@#$%^&*(),;''[]{}";
+  for (var i in strLow) {
+    if (specialChars.indexOf(strLow[i]) === -1) {
+      count[strLow[i]] === undefined ? count[strLow[i]] = 1 : count[strLow[i]] += 1;
+    }
+  }
+}
+console.log(letterCount("California Raisins"));
