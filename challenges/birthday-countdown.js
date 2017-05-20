@@ -45,10 +45,15 @@ Javascript `Date` type in your solution.
 
 function daysUntilDate(futureDate) {
   //convert string to date
-  var stringToDate = new Date(futureDate);
+  var dateToInteger = Date.parse(futureDate);
   var todaysDate = new Date();
-  var daysDifference = todaysDate - stringToDate;
-  return daysDifference;
+  var todaysDateInteger = Date.parse(todaysDate)
+  var integerDifference = dateToInteger - todaysDateInteger;
+  var seconds = Math.floor(integerDifference / 1000);
+  var minutes = Math.floor( seconds / 60 );
+  var hours = Math.floor( minutes / 60 );
+  var days = Math.floor( hours / 24 );
+  return days;
 
 }
 
