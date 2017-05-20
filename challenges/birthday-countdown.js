@@ -64,20 +64,23 @@ function todaysDate() {
 function nextBirthday(str) {
   let today = todaysDate();
   let todayArray = today.split("/");
-  let targetDateArr = str.split("/");
-  let thisYear = todayArray[2];
-  let retDate = targetDateArr;
+  let targetDate = str.split("/");
+  let targetDateArr = [];
+  targetDateArr[0] = targetDate[0];
+  targetDateArr[1] = targetDate[1];
 
-  if (parseInt(todayArray[0]) > parseInt(targetDateArr[0])) {
-    retDate[2] = thisYear;
-  } else if ((todayArray[0] > targetDateArr[0]) && (todayArray[1] >= targetDateArr[1])) {
-    retDate[2] = thisYear;
+  let thisYear = todayArray[2];
+
+  if ((parseInt(todayArray[0]) > parseInt(targetDateArr[0])) && (parseInt(todayArray[1]) >= parseInt(targetDateArr[1]))) {
+    targetDateArr.push(parseInt(thisYear) + 1).toString();
+  } else if (parseInt(todayArray[0]) > parseInt(targetDateArr[0])) {
+    targetDateArr.push(parseInt(thisYear) + 1).toString();
   } else {
-    retDate[2] = (parseInt(todayArray[2]) + 1).toString();
+    targetDateArr.push(thisYear);
   }
-  return retDate.join("/");
+  return targetDateArr.join("/");
 }
-console.log(nextBirthday("06/01/1975"));
+//console.log(nextBirthday("04/01/1975"));
 
 function birthdayReminder(arr) {
   let results = [];
