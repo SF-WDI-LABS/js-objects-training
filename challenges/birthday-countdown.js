@@ -34,3 +34,41 @@
 */
 
 // YOUR CODE HERE
+function daysUntilDate(str) {
+  let targetDate = Date.parse(str);
+  let today = Date.now();
+  let diff = (targetDate - today);
+
+  return `${Math.floor(diff/86400000)}`;
+}
+let sentenceForm = " days until your birthday!!";
+//console.log(daysUntilDate("12/29/2017") + sentenceForm);
+
+function dobThisYr(str) {
+  let days = daysUntilDate(str);
+  let decider = Math.round(Date.now()/86400000);
+
+  console.log(days, decider);
+}
+dobThisYr("4/01/1975");
+
+function birthdayReminder(arr) {
+  var results = [];
+
+  for (var i in arr) {
+    results.push(`${arr[i].name}s birthday is in ${daysUntilDate(arr[i].dob)} days!`);
+  }
+  return results;
+}
+
+let example1 = [
+  {
+    name: "Jack",
+    dob: "10/31/2013"
+  },
+  {
+    name: "Jill",
+    dob: "4/01/1975"
+  }
+];
+console.log(birthdayReminder(example1));
