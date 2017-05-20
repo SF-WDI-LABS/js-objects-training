@@ -44,19 +44,47 @@ function daysUntilDate(str) {
 let sentenceForm = " days until your birthday!!";
 //console.log(daysUntilDate("12/29/2017") + sentenceForm);
 
-function dobThisYr(str) {
-  let days = daysUntilDate(str);
-  let decider = Math.round(Date.now()/86400000);
+function todaysDate() {
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth()+1; //January is 0!
 
-  console.log(days, decider);
+  var yyyy = today.getFullYear();
+  if(dd<10){
+    dd='0'+dd;
+  }
+  if(mm<10){
+    mm='0'+mm;
+  }
+  var today = mm+'/'+dd+'/'+yyyy;
+  return today;
 }
-dobThisYr("4/01/1975");
+//console.log(today());
+
+function nextBirthday(str) {
+  let today = todaysDate();
+  let todayArray = today.split("/");
+  let targetDateArr = str.split("/");
+  let thisYear = todayArray[2];
+  let retDate = targetDateArr;
+
+  if (parseInt(todayArray[0]) > parseInt(targetDateArr[0])) {
+    retDate[2] = thisYear;
+  } else if ((todayArray[0] > targetDateArr[0]) && (todayArray[1] >= targetDateArr[1])) {
+    retDate[2] = thisYear;
+  } else {
+    retDate[2] = (parseInt(todayArray[2]) + 1).toString();
+  }
+  return retDate.join("/");
+}
+console.log(nextBirthday("06/01/1975"));
 
 function birthdayReminder(arr) {
-  var results = [];
+  let results = [];
 
-  for (var i in arr) {
-    results.push(`${arr[i].name}s birthday is in ${daysUntilDate(arr[i].dob)} days!`);
+  for (let i in arr) {
+    let nextBDay = nextBirthday(arr[i].dob);
+    results.push(`${arr[i].name}s birthday is in ${daysUntilDate(nextBDay)} days!`);
   }
   return results;
 }
