@@ -52,7 +52,7 @@
 //   }
 
 function parseQueryString(unformatedStr) {
-  if (unformatedStr === "") {
+  if ( (unformatedStr.split("=").length-1) === 0 ) {
     return [];
   } else {
     var firstReplace = unformatedStr.replace(/=/g, "\":\"");
@@ -62,4 +62,5 @@ function parseQueryString(unformatedStr) {
     return jsonToObj;
   }
 }
-parseQueryString("a=apple&b=beet&b=blueberry&c=&d=10");
+
+parseQueryString();
