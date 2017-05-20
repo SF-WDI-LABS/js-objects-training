@@ -34,3 +34,27 @@
 */
 
 // YOUR CODE HERE
+
+
+function parseDate(str) {
+    var mdy = str.split('/');
+    var curYear = (new Date(Date.now())).toString().split(' ')[3];
+    return new Date(curYear, mdy[0]-1, mdy[1]);
+}
+
+function daydiff(first, second) {
+    return Math.round((second-first)/(1000*60*60*24));
+}
+
+function birthdayReminder(arr){
+  var res = [];
+  for( var i = 0; i < arr.length; i++ ){
+   var days = daydiff(new Date(Date.now()),parseDate(arr[i].dob));
+   if(days < 0){
+     days = 365 + days;
+   }
+   var msg = arr[i].name + "'/'s' birthday is in " + days + ' days';
+   res.push(msg);
+ }
+   return res;
+}
