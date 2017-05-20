@@ -39,6 +39,7 @@ for(var i=0,c=arr.length;i<c;i++){
     else occ[arr[i]] = 1;
 }
 for(var i in occ){
-    console.log('count of '+i+' -> '+occ[i]); 
+    console.log(''+i+' = '+occ[i]); 
 }}
+
 
