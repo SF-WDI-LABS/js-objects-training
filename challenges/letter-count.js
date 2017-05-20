@@ -31,7 +31,7 @@
 */
 
 // YOUR CODE HERE
-var str = "A rocket screams across the sky";
+function phrase(str) {
 var arr = str.split('');
 var occ = {};
 for(var i=0,c=arr.length;i<c;i++){
@@ -40,5 +40,5 @@ for(var i=0,c=arr.length;i<c;i++){
 }
 for(var i in occ){
     console.log('count of '+i+' -> '+occ[i]); 
-}
+}}
 
