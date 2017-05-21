@@ -39,16 +39,7 @@
 
 function pingPong(arr) {
 
-  //console.log(arr);
-  //console.log(findNotNullIndex(arr));
-
-  var currentPos = findNotNullIndex(arr);
-  var numSteps = arr[currentPos].steps;
-
-  //console.log(currentPos);
-  //console.log(numSteps);
-
-  // function to return the index in the array with the object / where the element is not null
+  // function to return the index in the array with the object (where the element is not null)
   function findNotNullIndex(arr) {
     for (var i = 0; i < arr.length; i++) {
       if (arr[i] !== null) {
@@ -56,42 +47,25 @@ function pingPong(arr) {
       }
     }
   }
-
-  // determine the direction the ball should be moving
-  // each "bounce" will be in increments of three, or one minus the size of the array
-  var bounces = Math.floor(numSteps / 3);
-
-  //console.log(bounces);
-
-  // increment the number of steps
+  // get the position of the object in the array; store in a variable
+  var currentPos = findNotNullIndex(arr);
+  // get the steps property of the object; store in a variable
+  var numSteps = arr[currentPos].steps;
+  // calculate the number of "bounces" the ball has taken so far based on the number of steps and the length of the table / number of cells
+  var bounces = Math.floor(numSteps / (arr.length - 1));
+  // update the object to increment the number of steps
   arr[currentPos].steps += 1;
-
-  // store the object in a variable
+  // store the updated object in a new object
   var obj = arr[currentPos];
-
-  // depending on the number of bounces, we can figure out which way it is moving
-  var direction;
-  if (bounces % 2 === 0) {
-    direction = "right";
-    arr[currentPos] = null;
+  // update the object
+  // based on the number of bounces and the fact that there are two endpoints, we can determine the direction
+  if (bounces % 2 === 0) {    // moving to the right
     arr[currentPos + 1] = obj;
-  } else {
-    direction = "left";
-    arr[currentPos] = null;
+  } else {                    // moving to the left
     arr[currentPos - 1] = obj;
   }
-
-  //console.log(`current position is ${currentPos}, number of bounces is ${bounces}, and we are moving to the ${direction}`);
-  console.log(arr);
-
-
+  arr[currentPos] = null;
   // return the updated array
   return arr;
 
-}
-
-var table = [{steps: 6}, null, null, null];
-
-for (var i = 0; i < 15; i++) {
-  pingPong(table);
 }
