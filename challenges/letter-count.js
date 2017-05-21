@@ -30,19 +30,23 @@
 
 */
 
-// DECLARE NEW OBJECT & STRING //
+// DECLARE NEW EMPTY OBJECT//
 
 let newObj  = {}
-let str     = 'supercalifrAgilisticexpialidocious'
+
+function letterCount(x) {
+
+// MAKE ALL CHARACTERS UNIFORM
+  let str   = x.toLowerCase();
 
 // ITERATE THROUGH STRING TO GET EACH LETTER//
-
-for (i = 0; i < str.length; i++) {
-  let a = str.charAt(i))
-
+  for (i = 0; i < str.length; i++) {
+    let a   = str.charAt(i)
 
 // ADD LETTERS TO OBJECT
-  newObj[a] = (isNaN(newObj[a]) ? 1 : newObj[a] + 1);
+    newObj[a] = (isNaN(newObj[a]) ? 1 : newObj[a] + 1);
+  };
 };
 
+letterCount('supercalifrAgilisti+cexpialidocious');
 console.log(newObj);
