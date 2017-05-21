@@ -30,4 +30,19 @@
 
 */
 
-// YOUR CODE HERE
+// DECLARE NEW OBJECT & STRING //
+
+let newObj  = {}
+let str     = 'supercalifrAgilisticexpialidocious'
+
+// ITERATE THROUGH STRING TO GET EACH LETTER//
+
+for (i = 0; i < str.length; i++) {
+  let a = str.charAt(i))
+
+
+// ADD LETTERS TO OBJECT
+  newObj[a] = (isNaN(newObj[a]) ? 1 : newObj[a] + 1);
+};
+
+console.log(newObj);
