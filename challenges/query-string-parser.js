@@ -53,20 +53,21 @@
 
 */
 
-let newObj = {}
-let newArray = []
+let newObj    = {}
+let newArray  = []
+let result    = []
 
 function parseQueryString(x){
   let str = x.toLowerCase();
 
-  newArray      = str.split(["&"]);
-  let arrLength = newArray.length;
-
-  for (i = 0; i < arrLength; i++) {
-    let kvArray = newArray[i]
-    let result = kvArray.split(["="]);
-    return result
+// SEPARATE KEY-VALUE PAIRS
+  newArray = str.split(["&"]);
+// ITERATE THROUGH THAT ARRAY TO...
+  for (i = 0; i < newArray.length; i++) {
+// SEPARATE KEYS & VALUES
+    result = newArray[i].split(["="]);
+    newObj[result[0]] = result[1];
   }
-
-console.log(result);
+// RETURN NEW OBJECT WITH NEW KEYS AND PAIRS
+  return(newObj);
 };
