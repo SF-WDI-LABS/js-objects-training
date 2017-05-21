@@ -45,3 +45,22 @@
 */
 
 // YOUR CODE HERE
+
+/* PSEUDOCODE
+
+1.Separate keys from values using "="
+2.Separate key value pairs "&" - maybe first?
+
+*/
+
+let newObj = {}
+let newArray = []
+
+function parseQueryString(x){
+  let str = x.toLowerCase();
+
+  newArray = str.split(["="])
+
+  console.log(newArray);
+
+};
