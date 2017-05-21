@@ -44,15 +44,8 @@
 
 */
 
-// YOUR CODE HERE
 
-/* PSEUDOCODE
-
-1.Separate keys from values using "="
-2.Separate key value pairs "&" - maybe first?
-
-*/
-
+// GLOBAL VARIABLES
 let newObj    = {}
 let newArray  = []
 let result    = []
@@ -62,8 +55,10 @@ function parseQueryString(x){
 
 // SEPARATE KEY-VALUE PAIRS
   newArray = str.split(["&"]);
+
 // ITERATE THROUGH THAT ARRAY TO...
   for (i = 0; i < newArray.length; i++) {
+
 // SEPARATE KEYS & VALUES
     result = newArray[i].split(["="]);
     newObj[result[0]] = result[1];
