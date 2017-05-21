@@ -38,3 +38,20 @@
 */
 
 // YOUR CODE HERE
+
+function pingPong(arr){
+  for(var i = 0; i < arr.length; i++ ){
+  if(arr[i] && i < (arr.length - 1)){
+     arr[i].steps = arr[i].steps + 1;
+      arr[i+1]= arr[i];
+      arr[i] = null;
+      return arr;
+  }
+  else if (arr[i] && i === (arr.length - 1)){
+    arr[i].steps = arr[i].steps + 1;
+    arr[i-1]= arr[i];
+    arr[i] = null;
+    return arr;
+  }
+}
+}
