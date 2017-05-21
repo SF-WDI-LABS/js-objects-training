@@ -59,8 +59,14 @@ let newArray = []
 function parseQueryString(x){
   let str = x.toLowerCase();
 
-  newArray = str.split(["="])
+  newArray      = str.split(["&"]);
+  let arrLength = newArray.length;
 
-  console.log(newArray);
+  for (i = 0; i < arrLength; i++) {
+    let kvArray = newArray[i]
+    let result = kvArray.split(["="]);
+    return result
+  }
 
+console.log(result);
 };
