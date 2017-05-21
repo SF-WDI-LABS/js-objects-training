@@ -57,7 +57,7 @@ function pingPong(arr) {
   arr[currentPos].steps += 1;
   // store the updated object in a new object
   var obj = arr[currentPos];
-  // update the object
+  // update the array
   // based on the number of bounces and the fact that there are two endpoints, we can determine the direction
   if (bounces % 2 === 0) {    // moving to the right
     arr[currentPos + 1] = obj;
