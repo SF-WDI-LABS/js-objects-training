@@ -31,6 +31,18 @@
   - Will your function still work tomorrow when the date is different? Is it future proofed?
   - To make your output more relevant, can you sort by days remaining (ascending)?
 
+PSUEDOCODE :
+
+1. Establish today as start date
+2. Establish what day of the year it is
+2. Break birthdate into day of the year - integer
+3. Subtract that day of the year from today's DOTR
+
 */
 
 // YOUR CODE HERE
+// GLOBALS
+
+let t = new Date();
+let today = t.toDateString();
+console.log(today);
