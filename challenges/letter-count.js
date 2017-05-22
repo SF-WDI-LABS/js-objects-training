@@ -36,10 +36,10 @@ function letterCount(string){
   let obj = {};
   let count = 1;
   arr = string.split('');
-  for( var i = 0; i < arr.length; i++ ){
-    console.log(arr);
+  for( var i = 0; i <= arr.length; i++ ){
     if(arr[i] === string.substr(i,1)){
       if(obj[arr[i]]){
+        //console.log(obj[arr[i]]);
        obj[arr[i]] = count++;
      }
      else{
