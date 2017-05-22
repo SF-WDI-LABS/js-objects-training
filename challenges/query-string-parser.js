@@ -45,3 +45,21 @@
 */
 
 // YOUR CODE HERE
+
+function parseQueryString(str){
+  var res = {};
+  var arr = str.split('&');
+  for( var i = 0; i<arr.length; i++){
+  if(arr[i].includes('=')){
+    var resA = arr[i].split('=');
+    res[resA[0]] = resA[1];
+  }
+}
+return res;
+}
+
+function parseObjToString(obj){
+  var res = JSON.stringify(obj).replace(/,/g , "&").replace(/:/g , "=").replace(/"/g , "");
+  res = res.substr(1,(res.length - 1) );
+  return res;
+}
