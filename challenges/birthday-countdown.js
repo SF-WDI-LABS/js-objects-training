@@ -34,30 +34,28 @@
 */
 
 function daysUntilDate(str) {
+
   // split the string into an array with the month, day, and year
   dateArr = str.split("/");
   // init a new Date object representing the date passed in
   var compareDate = new Date(dateArr[2], dateArr[0] - 1, dateArr[1]);
-  console.log(compareDate);
   // use the getTime() method to get the number of milliseconds between 1970/01/01 and the date passed in
   var compareTimeInMs = compareDate.getTime();
-  //console.log(compareTimeInMs);
   // get the number of milliseconds between 1970/01/01 and the current date (remove the time portion using the setHours method)
   var currentDate = new Date();
   currentDate.setHours(0, 0, 0, 0);
   var currentTimeInMs = currentDate.getTime();
-  console.log(currentDate);
   // calculate the number of days between the current date and the date passed in
   var numDays = (compareTimeInMs - currentTimeInMs) / (1000 * 60 * 60 * 24);
-  //console.log(numDays);
-  console.log(`number of days until date: ${numDays}`);
+  // return the number of days
   return Math.floor(numDays);
 
 }
 
-daysUntilDate("05/02/2017");
+
 
 function birthdayReminder(arrayOfObjects) {
+
   // declare an empty array to hold the birthday reminder strings
   var bdayReminders = [];
   // iterate through the array of objects
@@ -73,25 +71,10 @@ function birthdayReminder(arrayOfObjects) {
       year++;
     }
     var newDOBString = `${month}/${day}/${year}`;
-    console.log(newDOBString)
     // push the formatted and calculated reminder into the array
     bdayReminders.push(`${currentVal.name}'s birthday is in ${daysUntilDate(newDOBString)} days`);
   })
   // return the birthday reminders array
   return bdayReminders;
+
 }
-
-
-
-var testArr = [
-  {
-    name: "Jack",
-    dob: "5/23/2014"
-  },
-  {
-    name: "Jill",
-    dob: "5/20/1975"
-  }
-]
-
-console.log(birthdayReminder(testArr));
