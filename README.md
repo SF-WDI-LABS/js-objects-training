@@ -5,6 +5,10 @@
 * In your forked copy of this readme, add a short (3-5 sentence) reflection about your work to the top in a section titled "Training Reflection".
 * You should include a link your forked repository on your personal website when you complete work.
 
+## Training Reflection
+
+These challenges took quite a long time to complete and I'm not sure I covered all the edge cases.  I did try a couple of bonuses to future proof the birthday countdown and allow arrays of any length for the ping pong challenge.  Working with the Date object and Date methods in JavaScript was new and took awhile to get things to work but a good learning exercise.
+
 ## Challenges
 1. [Letter Count](/challenges/letter-count.js)
 2. [Query String Parser](/challenges/query-string-parser.js)
