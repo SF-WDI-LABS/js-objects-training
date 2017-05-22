@@ -34,3 +34,10 @@
 */
 
 // YOUR CODE HERE
+
+//number of days between todays date and future date
+function daysUntilDate(string) {
+  var date = date.parse (string);
+  var today = date.now();
+  return ((date - today)/(1000*60*60*24));
+}
