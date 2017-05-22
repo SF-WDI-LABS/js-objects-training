@@ -45,3 +45,12 @@
 */
 
 // YOUR CODE HERE
+function parseQueryString(keyValueString) {
+    let resultHash = {};
+    let keyValuePairs = keyValueString.split("&");
+    keyValuePairs.forEach((keyValuePair) => {
+        let keyValueArr = keyValuePair.split("=");
+        resultHash[keyValueArr[0]] = keyValueArr[1];
+    }); // end of forEach.
+    return resultHash;
+}

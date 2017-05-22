@@ -6,8 +6,7 @@
 
   See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
 
-  Next, create a function `birthdayReminder` that accepts an array of objects, containing a person's
-  date of birth (dob), and returns an array of reminder messages (strings).
+  Next, create a function `birthdayReminder` that accepts an array of objects, containing a person's date of birth (dob), and returns an array of reminder messages (strings).
 
   ```javascript
   birthdayReminder([
@@ -34,3 +33,30 @@
 */
 
 // YOUR CODE HERE
+function daysUntilDate(dateString) {
+    let today = new Date();
+    let userDate = new Date(dateString);
+    let timeDiff = today.getTime() - userDate.getTime();
+	let dayDiff = Math.floor(timeDiff / (1000 * 3600 * 24));
+	return dayDiff;
+} 
+
+
+function birthdayReminder(people) {
+	outputMsg = [];
+    people.forEach(function(person){
+		outputMsg.push(`${person.name}'s birthday is in ${daysUntilDate(person.dob)} days.`);
+	});
+	return outputMsg;
+} // returns an array of reminder messages (strings)
+
+birthdayReminder([
+    {
+      name: "Jack",
+      dob: "10/31/2013"
+    },
+    {
+      name: "Jill",
+      dob: "4/01/1975"
+    }
+  ])
