@@ -44,4 +44,25 @@
 
 */
 
-// YOUR CODE HERE
+
+// GLOBAL VARIABLES
+let newObj    = {}
+let newArray  = []
+let result    = []
+
+function parseQueryString(x){
+  let str = x.toLowerCase();
+
+// SEPARATE KEY-VALUE PAIRS
+  newArray = str.split(["&"]);
+
+// ITERATE THROUGH THAT ARRAY TO...
+  for (i = 0; i < newArray.length; i++) {
+
+// SEPARATE KEYS & VALUES
+    result = newArray[i].split(["="]);
+    newObj[result[0]] = result[1];
+  }
+// RETURN NEW OBJECT WITH NEW KEYS AND PAIRS
+  return(newObj);
+};

@@ -30,4 +30,23 @@
 
 */
 
-// YOUR CODE HERE
+// DECLARE NEW EMPTY OBJECT//
+
+let newObj = {}
+
+function letterCount(x) {
+
+// MAKE ALL CHARACTERS UNIFORM & ESCAPE SPECIAL CHARACTERS
+  let str = x.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g,'').toLowerCase();
+
+// ITERATE THROUGH STRING TO GET EACH LETTER//
+  for (i = 0; i < str.length; i++) {
+    let a = str.charAt(i)
+
+// ADD LETTERS TO OBJECT
+    newObj[a] = (isNaN(newObj[a]) ? 1 : newObj[a] + 1);
+  };
+};
+
+letterCount('supercalifrAgilisti+cexpialidocious');
+console.log(newObj);
