@@ -49,4 +49,9 @@
 function parseQueryString(string) {
    let splitString = string.split("&");
    let output = {};
+   splitString.forEach(function(e) {
+     let split = e.split("=");
+     output[split[0]] = [split[1]];
+   });
+   return output;
 }
