@@ -1,7 +1,6 @@
 /*
 
-  Create a function `letterCount` that accepts a string, and finds the number of times each letter
-  occurs in the string. For example, given the word "apple", letterCount("apple") should count all
+  Create a function `letterCount` that accepts a string, and finds the number of times each letter occurs in the string. For example, given the word "apple", letterCount("apple") should count all
   occurrences of the letters "a", "p", "l" and "e" and then return the following output:
 
   ```javascript
@@ -31,3 +30,18 @@
 */
 
 // YOUR CODE HERE
+function letterCount(string) {
+    let outputHash = {};
+    let notALetter = [" ", "!", "?", ",", ".", "&", "-", "'"];
+    let letters = string.toLowerCase().split("");
+    letters.filter(function(letter) {
+        if (!notALetter.includes(letter)) {
+            if (outputHash[letter])
+            outputHash[letter] += 1;
+            else {
+                outputHash[letter] = 1;
+            }
+        }
+    })
+    return outputHash;
+}

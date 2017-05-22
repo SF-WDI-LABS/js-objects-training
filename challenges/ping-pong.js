@@ -36,5 +36,27 @@
   - Support multiple ping-pongs.
 
 */
-
+    
 // YOUR CODE HERE
+
+// 1. first, start moving right. Make a moveRight / moveLeft function.
+// 2. if (el.steps % times === 0), move the other way.
+// 3. if (el.steps % times !== 0), keep moving towards the same direction.
+
+let table = [{steps: 0}, null, null, null];
+let times = table.length - 1;
+function moveRight() {
+    
+}
+function moveLeft() {
+    
+}
+function pingPong(table) { 
+    table[0].steps = 0; // the first el is always {steps: 0}
+    if table
+    // moveRight() until table[i].steps % times === 0
+    
+}
+
+
+
