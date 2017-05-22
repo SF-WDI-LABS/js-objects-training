@@ -31,3 +31,16 @@
 */
 
 // YOUR CODE HERE
+function phrase(str) {
+  //split string into array
+  var arr = str.split('');
+  //make empty object to store values
+  var occ = {};
+
+  for (var i = 0, c = arr.length; i < c; i++) {
+    if (occ[arr[i]]) occ[arr[i]]++;
+    else occ[arr[i]] = 1;
+  }
+  //return the object with the letter as the key, and ob number as the value.
+return occ
+}

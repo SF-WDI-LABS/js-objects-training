@@ -45,3 +45,15 @@
 */
 
 // YOUR CODE HERE
+function parseQueryString(string){
+  //create empty object to store data.
+  let qsObj = {};
+  //spit the string on the = and & symbols.
+  arr = string.split(/[=&]/);
+  //loop through array. increment by two to get each pair.
+  for(i = 0; i<arr.length; i+=2){
+    //key is the first position, and the value is the second position.
+    qsObj[arr[i]] = arr[i+1];
+  };
+    return qsObj;
+}
