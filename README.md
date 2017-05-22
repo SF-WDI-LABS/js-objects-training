@@ -1,3 +1,10 @@
+#Training Reflection
+I tried using node to test my code but I feel more comfortable using my browser console. I'm sure with time and practice, this will not be an issue
+I ran into many syntax errors as I was testing because I was not mindful that I was creating an array in most cases; Must remember this! 
+I was not able to complete the birthday countdown or pingpong challenge. The logic in the pingpong challenge is confusing to me. 
+
+
+
 # <img src="https://cloud.githubusercontent.com/assets/7833470/10899314/63829980-8188-11e5-8cdd-4ded5bcb6e36.png" height="60"> Javascript Objects - Problem Set
 
 * Please **Fork & Clone** this repo.
