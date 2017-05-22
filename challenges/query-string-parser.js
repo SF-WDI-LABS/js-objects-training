@@ -47,6 +47,6 @@
 // YOUR CODE HERE
 
 function parseQueryString(string) {
-   let splitString = string.split("");
+   let splitString = string.split("&");
    let output = {};
 }
