@@ -34,3 +34,34 @@
 */
 
 // YOUR CODE HERE
+
+function daysUntilDate(string) {
+  var date = Date.parse(string);
+  var today = Date.now();
+  return ((givenDate - today)/(1000*60*60*24));
+};
+
+
+function formatDate(dateString) {
+  var today = new Date();
+  var dateArr = dateString.split("/");
+  var todaysMonth = (today.getMonth() + 1);
+  var todaysDate = (today.getDate());
+  var todaysYear = (today.getFullYear());
+  if ((parseInt(dateArr[0]) > parseInt(todaysMonth)) || ((parseInt(dateArr[0]) === parseInt(todaysMonth)) && (parseInt(dateArr[1]) > parseInt(todaysDate))) ) {
+    dateArr[2] = todaysYear;
+  } else {
+    dateArr[2] = todaysYear+1;
+  }
+  return dateArr.join("/");
+}
+
+function birthdayReminder(birthdays) {
+  var output = [];
+  birthdays.forEach(function(el) {
+    var birthdayString = formatDate(el.dob);
+    var daysUntil = daysUntilDate(birthdayString);
+    output.push(el.name + "'s birthday is in " + parseInt(daysUntil) + " days");
+  });
+  return output;
+}
