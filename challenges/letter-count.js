@@ -31,3 +31,7 @@
 */
 
 // YOUR CODE HERE
+//
+function letterCount (word) {
+
+}
