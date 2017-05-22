@@ -45,3 +45,7 @@
 */
 
 // YOUR CODE HERE
+
+function parseQueryString(parseme) {
+  
+}
