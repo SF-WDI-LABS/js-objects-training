@@ -33,4 +33,48 @@
 
 */
 
-// YOUR CODE HERE
+function daysUntilDate(str) {
+
+  // split the string into an array with the month, day, and year
+  dateArr = str.split("/");
+  // init a new Date object representing the date passed in
+  var compareDate = new Date(dateArr[2], dateArr[0] - 1, dateArr[1]);
+  // use the getTime() method to get the number of milliseconds between 1970/01/01 and the date passed in
+  var compareTimeInMs = compareDate.getTime();
+  // get the number of milliseconds between 1970/01/01 and the current date (remove the time portion using the setHours method)
+  var currentDate = new Date();
+  currentDate.setHours(0, 0, 0, 0);
+  var currentTimeInMs = currentDate.getTime();
+  // calculate the number of days between the current date and the date passed in
+  var numDays = (compareTimeInMs - currentTimeInMs) / (1000 * 60 * 60 * 24);
+  // return the number of days
+  return Math.floor(numDays);
+
+}
+
+
+
+function birthdayReminder(arrayOfObjects) {
+
+  // declare an empty array to hold the birthday reminder strings
+  var bdayReminders = [];
+  // iterate through the array of objects
+  arrayOfObjects.forEach(function(currentVal) {
+    // update the dob string with the current year
+    var month = currentVal.dob.split("/")[0];
+    var day = currentVal.dob.split("/")[1];
+    var year = new Date().getFullYear();
+    // increment the year by 1 if the birthday is before the current date
+    var compareDate = new Date(`${month}/${day}/${year}`);
+    var currentDate = new Date();
+    if (compareDate < currentDate) {
+      year++;
+    }
+    var newDOBString = `${month}/${day}/${year}`;
+    // push the formatted and calculated reminder into the array
+    bdayReminders.push(`${currentVal.name}'s birthday is in ${daysUntilDate(newDOBString)} days`);
+  })
+  // return the array
+  return bdayReminders;
+
+}

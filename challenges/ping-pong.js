@@ -37,4 +37,35 @@
 
 */
 
-// YOUR CODE HERE
+function pingPong(arr) {
+
+  // function to return the index in the array with the object (where the element is not null)
+  function findNotNullIndex(arr) {
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i] !== null) {
+        return i;
+      }
+    }
+  }
+  // get the position of the object in the array; store in a variable
+  var currentPos = findNotNullIndex(arr);
+  // get the steps property of the object; store in a variable
+  var numSteps = arr[currentPos].steps;
+  // calculate the number of "bounces" the ball has taken so far based on the number of steps and the length of the table / number of cells
+  var bounces = Math.floor(numSteps / (arr.length - 1));
+  // update the object to increment the number of steps
+  arr[currentPos].steps += 1;
+  // store the updated object in a new object
+  var obj = arr[currentPos];
+  // update the array
+  // based on the number of bounces and the fact that there are two endpoints, we can determine the direction
+  if (bounces % 2 === 0) {    // moving to the right
+    arr[currentPos + 1] = obj;
+  } else {                    // moving to the left
+    arr[currentPos - 1] = obj;
+  }
+  arr[currentPos] = null;
+  // return the updated array
+  return arr;
+
+}

@@ -44,4 +44,24 @@
 
 */
 
-// YOUR CODE HERE
+function parseQueryString(str) {
+
+  // declare an empty object to hold the final result to return
+  var result = {};
+  // if the argument passed in was an empty string, just return the empty object
+  if (str === "") {
+    return result;
+  }
+  // split the string into an array of key-value pair strings
+  strArr = str.split("&");
+  // iterate through each key-value pair strings
+  strArr.forEach(function(currentVal, index) {
+    // split the string into an array with the key and value (key at index 0, value at index 1)
+    currentVal = currentVal.split("=");
+    // update/add to the object with the kay and value
+    result[`\"${currentVal[0]}\"`] = currentVal[1].toString();
+  })
+  // return the object
+  return result;
+
+}
