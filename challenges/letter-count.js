@@ -35,5 +35,12 @@
 function letterCount (word) {
   let letterOutput = {};
   let wordsArray = word.split("");
-  wordsArray.forEach(function(e){
+  wordsArray.forEach(function(e) {
+    if (letterOutput[e]) {
+      letterOutput[e] += 1;
+    } else {
+      letterOutput[e] = 1;
+    }
+  });
+  return letterOutput;
 }
