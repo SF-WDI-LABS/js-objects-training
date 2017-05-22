@@ -33,5 +33,7 @@
 // YOUR CODE HERE
 //
 function letterCount (word) {
-
+  let letterOutput = {};
+  let wordsArray = word.split("");
+  wordsArray.forEach(function(e){
 }
