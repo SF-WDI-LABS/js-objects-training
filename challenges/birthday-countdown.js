@@ -74,7 +74,7 @@ function birthdayReminder(arrayOfObjects) {
     // push the formatted and calculated reminder into the array
     bdayReminders.push(`${currentVal.name}'s birthday is in ${daysUntilDate(newDOBString)} days`);
   })
-  // return the birthday reminders array
+  // return the array
   return bdayReminders;
 
 }
