@@ -46,6 +46,7 @@
 
 // YOUR CODE HERE
 
-function parseQueryString(parseme) {
-  
+function parseQueryString(string) {
+   let splitString = string.split("");
+   let output = {};
 }
